@@ -6,8 +6,9 @@ from django.db import models
 
 class Event(models.Model):
     name=models.CharField(max_length=100)
-    part_num=models.IntegerField()
-    guest_num=models.IntegerField()
+    limit=models.IntegerField()
+    guest_num = models.IntegerField()
+    guest_sign_num=models.IntegerField()
     status=models.BooleanField()
     address=models.CharField(max_length=200)
     start_time=models.DateTimeField('events time')

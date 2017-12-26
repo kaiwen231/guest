@@ -40,8 +40,8 @@ def event_manage(request):
     guest_number_list={}
     for event in event_list:
         guests=Guest.objects.filter(event_id=event.id)
-        event.part_num=len(guests)
-        event.guest_num=len(guests.filter(sign=True))
+        event.guest_num=len(guests)
+        event.guest_sign_num=len(guests.filter(sign=True))
     return render(request, 'event_manage.html', {"user": username, 'events': event_list})
 
 @login_required
